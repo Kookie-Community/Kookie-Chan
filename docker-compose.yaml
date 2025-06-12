@@ -1,0 +1,18 @@
+services:
+  kookie-chan:
+    image: markelpher/kookiechan:latest
+    container_name: kookie-chan
+    restart: unless-stopped
+    env_file:
+      - .env
+    command: python /app/main.py
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 2G
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
