@@ -15,6 +15,11 @@ COPY . .
 
 # Define a variável de ambiente para o token (opcional, pode setar no docker-compose)
 ENV DISCORD_TOKEN=""
+ENV GUILD_ID=""
+ENV STATUS_CHANNEL_ID=""
+ENV UPDATES_CHANNEL_ID=""
+ENV COMMANDS_CHANNEL_ID=""
+ENV UPDATE_LOG_URL=""
 
 # Comando para rodar o bot
 CMD ["python", "/app/main.py"]
