@@ -49,7 +49,7 @@ pip install -r requirements.txt
 Após a instalação e configuração:
 
 ```
-python bot.py
+python main.py
 ```
 
 O bot iniciará e começará a monitorar o status da rede Kookie, enviando notificações automaticamente no servidor do Discord configurado.
