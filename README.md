@@ -58,7 +58,7 @@ O bot iniciará e começará a monitorar o status da rede Kookie, enviando notif
 
 Contribuições são bem-vindas!
 
-1. Faça um fork do projeto
+1. Faça um [fork](https://github.com/Kookie-Community/Kookie-Chan/fork) do projeto
 
 2. Crie uma branch com sua feature:
 
@@ -78,7 +78,7 @@ git commit -m "Descrição da feature"
 git push origin minha-feature
 ```
 
-5. Abra um Pull Request
+5. Abra um [Pull Request](https://github.com/Kookie-Community/Kookie-Chan/compare)
 
 ## 📄 Licença
 
