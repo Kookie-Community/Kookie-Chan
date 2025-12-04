@@ -24,25 +24,25 @@ Ele utiliza técnicas de scraping para realizar solicitações, acompanhar statu
 
 ## 📥 Instalação
 
-Clone o repositório:
+1. Clone o repositório:
 
 ```
 git clone https://github.com/seu-usuario/Kookie-Chan.git
 ```
 
-Entre na pasta do projeto:
+2. Entre na pasta do projeto:
 
 ```
 cd Kookie-Chan
 ```
 
-Instale as dependências:
+3. Instale as dependências:
 
 ```
 pip install -r requirements.txt
 ```
 
-Configure o bot com seu token do Discord e ajustes necessários.
+4. Configure o bot com seu token do Discord e ajustes necessários.
 
 ## ⌨️ Uso
 
@@ -58,27 +58,27 @@ O bot iniciará e começará a monitorar o status da rede Kookie, enviando notif
 
 Contribuições são bem-vindas!
 
-Faça um fork do projeto
+1. Faça um fork do projeto
 
-Crie uma branch com sua feature:
+2. Crie uma branch com sua feature:
 
 ```
 git checkout -b minha-feature
 ```
 
-Faça um commit das alterações:
+3. Faça um commit das alterações:
 
 ```
 git commit -m "Descrição da feature"
 ```
 
-Envie para o repositório:
+4. Envie para o repositório:
 
 ```
 git push origin minha-feature
 ```
 
-Abra um Pull Request
+5. Abra um Pull Request
 
 ## 📄 Licença
 
