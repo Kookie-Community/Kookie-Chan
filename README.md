@@ -52,7 +52,7 @@ Após a instalação e configuração:
 python main.py
 ```
 
-O bot iniciará e começará a monitorar o status da rede Kookie, enviando notificações automaticamente no servidor do Discord configurado.
+O bot iniciará e começará a monitorar o status e atualizações do Kookie, enviando notificações automaticamente no servidor do Discord configurado.
 
 ## 🧩 Contribuição
 
