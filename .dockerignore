@@ -1,0 +1,26 @@
+# Documentação e CI/CD
+docs/
+.github/
+*.yml
+README.md
+LICENSE
+
+# Logs e caches Python
+*.log
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Build e distribuição
+build/
+dist/
+*.egg-info
+
+# Arquivos temporários
+*.swp
+*.tmp
+.DS_Store
+
+# Variáveis sensíveis
+.env

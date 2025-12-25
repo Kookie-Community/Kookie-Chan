@@ -1,0 +1,41 @@
+services:
+  bot:
+    image: markelpher/kookiechan:latest
+    container_name: kookiechan
+    restart: unless-stopped
+    env_file:
+      - ../.env
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - mongo
+    networks:
+      - botnet
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: senha
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - botnet
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 60 bot   # Verifica atualizações a cada 60s
+    networks:
+      - botnet
+
+volumes:
+  mongo_data:
+
+networks:
+  botnet:
