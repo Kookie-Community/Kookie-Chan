@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands, tasks
 from discord import Embed
+from discord import app_commands
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 from datetime import datetime
@@ -83,17 +84,25 @@ class StatusCog(commands.Cog):
         embed.add_field(name="Status atual", value=f"{icon} {'ONLINE' if online else 'OFFLINE'}", inline=True)
         embed.add_field(name="Código HTTP", value=str(s["last_http_code"]), inline=True)
         embed.add_field(name="Tempo de resposta", value=f"{s['last_response_time']}ms", inline=True)
-        embed.add_field(name="Última verificação",
-                        value=format_datetime_br(s["last_check"]) if s["last_check"] else "--",
-                        inline=True)
+        embed.add_field(
+            name="Última verificação",
+            value=format_datetime_br(s["last_check"]) if s["last_check"] else "--",
+            inline=True
+        )
 
         # Tempo contínuo
         if online:
-            embed.add_field(name="Tempo contínuo online",
-                            value=ms_to_str(s["continuous_online"] * 1000), inline=True)
+            embed.add_field(
+                name="Tempo contínuo online",
+                value=ms_to_str(s["continuous_online"] * 1000),
+                inline=True
+            )
         else:
-            embed.add_field(name="Tempo contínuo offline",
-                            value=ms_to_str(s["continuous_offline"] * 1000), inline=True)
+            embed.add_field(
+                name="Tempo contínuo offline",
+                value=ms_to_str(s["continuous_offline"] * 1000),
+                inline=True
+            )
 
         embed.add_field(name="Total de quedas", value=str(s["downtimes_count"]), inline=True)
         embed.add_field(name="Tempo total online", value=ms_to_str(s["total_online"] * 1000), inline=True)
@@ -220,15 +229,18 @@ class StatusCog(commands.Cog):
         await self.bot.wait_until_ready()
 
     # -------------------- Comando /status --------------------
-    @commands.hybrid_command(name="status", description="Mostra o status atual do Kookie")
-    async def status_cmd(self, ctx):
-        await ctx.defer(ephemeral=True)
+    @app_commands.command(
+        name="status",
+        description="Mostra o status atual do Kookie"
+    )
+    async def status_cmd(self, interaction: discord.Interaction):
         msg = await self.get_status_message()
         if msg:
-            return await ctx.reply(embed=msg.embeds[0], ephemeral=True)
+            await interaction.response.send_message(embed=msg.embeds[0], ephemeral=True)
+            return
 
         embed = self.build_embed(self.state)
-        return await ctx.reply(embed=embed, ephemeral=True)
+        await interaction.response.send_message(embed=embed, ephemeral=True)
 
     # -------------------- READY --------------------
     @commands.Cog.listener()
