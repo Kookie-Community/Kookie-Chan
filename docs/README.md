@@ -1,6 +1,6 @@
-# **👻🍪 Kookie-Chan**
+# **👻🍪 Kookie Chan**
 
-Kookie-Chan é um bot em Python desenvolvido para o servidor da rede social brasileira [Kookie](https://kookie.app) mantido pela comunidade.
+Kookie-Chan é um bot em Python desenvolvido para o [servidor](https://discord.gg/TWcCnmxcPN) da rede social brasileira [Kookie](https://kookie.app) mantido pela comunidade.
 
 Ele utiliza técnicas de scraping para realizar solicitações, acompanhar status e obter atualizações em tempo real, informando automaticamente os usuários sobre novidades ou eventuais problemas na plataforma.
 
