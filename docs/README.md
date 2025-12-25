@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 4. Configure o arquivo env do bot com seu token do Discord e ajustes necessários.
 
-## ⌨️ Uso
+## Uso
 
 Após a instalação e configuração:
 
